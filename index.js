@@ -17,8 +17,9 @@ module.exports = function (name, version) {
 	var headers = {};
 
 	if (token) {
-		if (process.env[scope.toUpperCase() + '_NPM_TOKEN']) {
-			token = token.replace('${' + scope.toUpperCase() + '_NPM_TOKEN}', process.env.NPM_TOKEN);
+		var SCOPED_TOKEN = scope.replace(/\W/g, '').toUpperCase() + '_NPM_TOKEN'
+		if (process.env[SCOPED_TOKEN]) {
+			token = token.replace('${' + SCOPED_TOKEN + '}', process.env[SCOPED_TOKEN]);
 		}
 
 		if (process.env.NPM_TOKEN) {
