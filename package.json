@@ -1,6 +1,6 @@
 {
   "name": "finboxio-package-json",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Get the package.json of a package from the npm registry",
   "license": "MIT",
   "repository": "finboxio/package-json",
