@@ -9,7 +9,8 @@ module.exports = function (name, version) {
 	var url = registryUrl(scope) +
 		encodeURIComponent(name).replace(/^%40/, '@');
 	var npmrc = rc('npm');
-	var token = npmrc[scope + ':_authToken'] || npmrc['//registry.npmjs.org/:_authToken'];
+	var registry = npmrc[scope + ':registry']
+	var token = npmrc[(registry || scope) + ':_authToken'] || npmrc['//registry.npmjs.org/:_authToken'];
 	var headers = {};
 
 	if (token) {
