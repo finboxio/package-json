@@ -3,13 +3,16 @@ var got = require('got');
 var registryUrl = require('registry-url');
 var rc = require('rc');
 var semver = require('semver');
+var URL = require('url')
 
 module.exports = function (name, version) {
 	var scope = name.split('/')[0];
-	var url = registryUrl(scope) +
-		encodeURIComponent(name).replace(/^%40/, '@');
+	var registry_url = registryUrl(scope)
+	if (!registry_url.endsWith('/')) registry_url += '/'
+	var url = registry_url + encodeURIComponent(name).replace(/^%40/, '@');
 	var npmrc = rc('npm');
 	var registry = npmrc[scope + ':registry']
+	if (registry) registry = '//' + URL.parse(registry).host + '/'
 	var token = npmrc[(registry || scope) + ':_authToken'] || npmrc['//registry.npmjs.org/:_authToken'];
 	var headers = {};
 

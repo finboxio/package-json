@@ -1,7 +1,6 @@
-# package-json [![Build Status](https://travis-ci.org/sindresorhus/package-json.svg?branch=master)](https://travis-ci.org/sindresorhus/package-json)
+# package-json
 
 > Get the package.json of a package from the npm registry
-
 
 ## Install
 
@@ -32,7 +31,7 @@ packageJson('@company/package', 'latest').then(json => {
 
 ### packageJson(name, [version])
 
-You can optionally specify a version (e.g. `1.0.0`) or `latest`.  
+You can optionally specify a version (e.g. `1.0.0`) or `latest`.
 If you don't specify a version you'll get the [main entry](http://registry.npmjs.org/pageres/) containing all versions.
 
 The version can also be in any format supported by the [semver](https://www.npmjs.com/package/semver) module. For example:

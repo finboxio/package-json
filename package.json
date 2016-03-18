@@ -1,13 +1,13 @@
 {
-  "name": "package-json",
-  "version": "2.3.1",
+  "name": "finboxio-package-json",
+  "version": "2.3.2",
   "description": "Get the package.json of a package from the npm registry",
   "license": "MIT",
-  "repository": "sindresorhus/package-json",
+  "repository": "finboxio/package-json",
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
+    "name": "Finbox.io",
+    "email": "hi@finboxio.com",
+    "url": "finboxio.com"
   },
   "engines": {
     "node": ">=0.10.0"
